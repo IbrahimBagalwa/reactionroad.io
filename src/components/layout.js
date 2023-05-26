@@ -7,9 +7,8 @@
 
 import * as React from "react"
 import { useStaticQuery, graphql } from "gatsby"
-
+import "../styles/global.css"
 import Header from "./header"
-import "./layout.css"
 
 const Layout = ({ children }) => {
   const data = useStaticQuery(graphql`
@@ -23,28 +22,28 @@ const Layout = ({ children }) => {
   `)
 
   return (
-    <>
+    <div className="bg-[#011627] max-w-8xl w-full h-screen mx-auto text-[#607B96]">
       <Header siteTitle={data.site.siteMetadata?.title || `Title`} />
-      <div
-        style={{
-          margin: `0 auto`,
-          maxWidth: `var(--size-content)`,
-          padding: `var(--size-gutter)`,
-        }}
-      >
-        <main>{children}</main>
-        <footer
-          style={{
-            marginTop: `var(--space-5)`,
-            fontSize: `var(--font-sm)`,
-          }}
-        >
-          © {new Date().getFullYear()} &middot; Built with
-          {` `}
-          <a href="https://www.gatsbyjs.com">Gatsby</a>
-        </footer>
-      </div>
-    </>
+      <section className="flex w-full justify-center items-center">
+        <div>
+          <main>{children}</main>
+          <footer className="flex text-[#E5E9F0]">
+            <a href="https://github.com/IbrahimBagalwa" className="pr-2">
+              Github
+            </a>
+            <a
+              href="https://www.linkedin.com/in/ibrahim-bagalwa-831400198/"
+              className="px-2"
+            >
+              Linkedin
+            </a>
+            <a href="https://twitter.com/ibrahim_Bagalwa" className="pl-2">
+              Twitter
+            </a>
+          </footer>
+        </div>
+      </section>
+    </div>
   )
 }
 
