@@ -1,6 +1,7 @@
 ---
 title: "When to use OR and Nullish coalescing Operator"
 date: "27-02-2023"
+description: "In javascript both logic operator OR || and Nullish coalescing ?? are used to provide fallback values"
 ---
 
 ### When to use OR and Nullish coalescing Operator.
