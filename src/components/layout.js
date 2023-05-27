@@ -23,9 +23,9 @@ const Layout = ({ children }) => {
 
   return (
     <div className="bg-[#011627] max-w-8xl w-full h-screen mx-auto text-[#607B96]">
-      <Header siteTitle={data.site.siteMetadata?.title || `Title`} />
       <section className="flex w-full justify-center items-center">
         <div>
+          <Header siteTitle={data.site.siteMetadata?.title || `Title`} />
           <main>{children}</main>
           <footer className="flex text-[#E5E9F0]">
             <a href="https://github.com/IbrahimBagalwa" className="pr-2">

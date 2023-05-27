@@ -1,3 +1,16 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+@font-face {
+  font-family: "MontSerrat";
+  src: local("MontSerrat"), url("/font/montserrat.woff2") format("woff2"),
+    url("/font/montserrat.woff2") format("woff");
+  font-style: normal;
+  font-weight: normal;
+  font-display: swap;
+}
+
+html {
+  @apply font-primary;
+}
