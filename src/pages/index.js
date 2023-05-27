@@ -2,24 +2,22 @@ import * as React from "react"
 
 import Layout from "../components/layout"
 import Seo from "../components/seo"
-import { graphql } from "gatsby"
+import { Link, graphql } from "gatsby"
 
 const IndexPage = ({ data }) => {
   console.log(data)
   return (
     <Layout>
-      <div>
-        <h1>Ibrahim thoughts</h1>
-        <h4>{data.allMarkdownRemark.totalCount}</h4>
-        {data.allMarkdownRemark.edges.map(({ node }) => (
+      {data.allMarkdownRemark.edges.map(({ node }) => (
+        <Link to={node.fields.slug}>
           <div key={node.id} className="mt-10">
-            <h2>
+            <h1 className="text-[#E5E9F0]">
               {node.frontmatter.title} - {node.frontmatter.date}
-            </h2>
-            <p>{node.frontmatter.description}</p>
+            </h1>
+            <span>{node.frontmatter.description}</span>
           </div>
-        ))}
-      </div>
+        </Link>
+      ))}
     </Layout>
   )
 }
@@ -34,7 +32,7 @@ export const Head = () => <Seo title="Home" />
 export default IndexPage
 export const query = graphql`
   query {
-    allMarkdownRemark {
+    allMarkdownRemark(sort: { fields: [frontmatter___date], order: DESC }) {
       totalCount
       edges {
         node {
@@ -43,6 +41,9 @@ export const query = graphql`
             description
             title
             date
+          }
+          fields {
+            slug
           }
           excerpt
         }
