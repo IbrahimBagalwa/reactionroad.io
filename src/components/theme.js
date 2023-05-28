@@ -4,13 +4,13 @@ const ThemeToggle = () => {
   return (
     <ThemeToggler>
       {({ theme, toggleTheme }) => (
-        <label>
+        <label class="switch">
           <input
             type="checkbox"
             onChange={e => toggleTheme(e.target.checked ? "dark" : "light")}
             checked={theme === "dark"}
-          />{" "}
-          Dark mode
+          />
+          <span class="slider round"></span>
         </label>
       )}
     </ThemeToggler>

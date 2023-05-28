@@ -10,7 +10,6 @@ import { useStaticQuery, graphql } from "gatsby"
 import PropTypes from "prop-types"
 import "../styles/global.css"
 import Header from "./header"
-import ThemeToggle from "./theme"
 
 const Layout = ({ children }) => {
   const data = useStaticQuery(graphql`
@@ -28,7 +27,7 @@ const Layout = ({ children }) => {
       <section className="flex items-center justify-center w-full pt-10">
         <div>
           <Header siteTitle={data.site.siteMetadata?.title || `Title`} />
-          <ThemeToggle />
+
           <main>{children}</main>
           <footer className="flex text-[#E5E9F0]">
             <a href="https://github.com/IbrahimBagalwa" className="pr-2">
