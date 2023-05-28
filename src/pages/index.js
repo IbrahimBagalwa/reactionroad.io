@@ -5,7 +5,6 @@ import Seo from "../components/seo"
 import { Link, graphql } from "gatsby"
 
 const IndexPage = ({ data }) => {
-  console.log(data)
   return (
     <Layout>
       {data.allMarkdownRemark.edges.map(({ node }) => (

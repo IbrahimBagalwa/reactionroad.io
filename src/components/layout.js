@@ -7,8 +7,10 @@
 
 import * as React from "react"
 import { useStaticQuery, graphql } from "gatsby"
+import PropTypes from "prop-types"
 import "../styles/global.css"
 import Header from "./header"
+import ThemeToggle from "./theme"
 
 const Layout = ({ children }) => {
   const data = useStaticQuery(graphql`
@@ -22,10 +24,11 @@ const Layout = ({ children }) => {
   `)
 
   return (
-    <div className="bg-[#011627] max-w-8xl w-full h-screen mx-auto text-[#607B96]">
-      <section className="flex w-full justify-center items-center">
+    <div className="bg-white dark:bg-[#011627] max-w-8xl w-full h-screen mx-auto text-[#607B96]">
+      <section className="flex items-center justify-center w-full pt-10">
         <div>
           <Header siteTitle={data.site.siteMetadata?.title || `Title`} />
+          <ThemeToggle />
           <main>{children}</main>
           <footer className="flex text-[#E5E9F0]">
             <a href="https://github.com/IbrahimBagalwa" className="pr-2">
@@ -46,5 +49,7 @@ const Layout = ({ children }) => {
     </div>
   )
 }
-
+Layout.propTypes = {
+  children: PropTypes.node.isRequired,
+}
 export default Layout
