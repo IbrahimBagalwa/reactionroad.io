@@ -9,11 +9,17 @@ const IndexPage = ({ data }) => {
     <Layout>
       {data.allMarkdownRemark.edges.map(({ node }) => (
         <Link to={node.fields.slug}>
-          <div key={node.id} className="mt-10">
-            <h1 className="dark:text-[#E5E9F0] text-[#011627]">
-              {node.frontmatter.title} - {node.frontmatter.date}
+          <div key={node.id} className="mt-14">
+            <h1 className="dark:text-[#E5E9F0] text-[#011627] text-xl">
+              {node.frontmatter.title}
             </h1>
-            <span>{node.frontmatter.description}</span>
+            <p className="text-xs">
+              {node.frontmatter.date}.{" "}
+              {Math.ceil(node.fields.slug.length / 200)} min read
+            </p>
+            <span className="dark:text-[#4D5BCE] text-[#cccccc] text-sm">
+              {node.frontmatter.description}
+            </span>
           </div>
         </Link>
       ))}
