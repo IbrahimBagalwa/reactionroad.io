@@ -1,7 +1,7 @@
 ---
 title: "Unleashing the Power of Reducers: How React Developers Can Revolutionize Their State Management!"
 date: "24-04-2023"
-description: "Reducers are pure functions that take the current state and an action as arguments, and return a new state"
+description: "Reducers are pure functions that accept the current state and an action as inputs, and produce a new state as output."
 ---
 
 ### How React Developers Can Revolutionize Their State Management!

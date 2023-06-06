@@ -11,9 +11,9 @@
   font-display: swap;
 }
 
-html {
+/* html {
   @apply font-primary;
-}
+} */
 .switch {
   position: relative;
   display: inline-block;

@@ -7,11 +7,13 @@ const BlogPost = ({ data }) => {
   return (
     <Layout>
       <div className="mt-14">
-        <h1 className="text-2xl dark:text-[#E5E9F0] text-[#011627]">
+        <h1 className="text-2xl font-bold dark:text-[#E5E9F0] text-[#011627]">
           {post.frontmatter.title}
         </h1>
-        <p className="text-xs">{post.frontmatter.date}</p>
-        <div dangerouslySetInnerHTML={{ __html: post.html }} />
+        <div
+          className="mt-10"
+          dangerouslySetInnerHTML={{ __html: post.html }}
+        />
       </div>
     </Layout>
   )

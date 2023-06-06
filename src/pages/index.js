@@ -10,7 +10,7 @@ const IndexPage = ({ data }) => {
       {data.allMarkdownRemark.edges.map(({ node }) => (
         <Link to={node.fields.slug}>
           <div key={node.id} className="mt-14">
-            <h1 className="dark:text-[#E5E9F0] text-[#011627] text-xl">
+            <h1 className="dark:text-[#E5E9F0] font-bold text-[#011627] text-2xl">
               {node.frontmatter.title}
             </h1>
             <p className="text-xs">
