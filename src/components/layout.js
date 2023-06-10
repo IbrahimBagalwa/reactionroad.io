@@ -25,7 +25,7 @@ const Layout = ({ children }) => {
 
   return (
     <div className="bg-white dark:bg-[#011627] mx-auto dark:text-[#bfc0c2] text-[#011627]">
-      <section className="flex items-center justify-center max-w-xl mx-auto w-full pt-10 h-full">
+      <section className="flex items-center justify-center max-w-xl mx-auto w-full pt-10">
         <div>
           <Header siteTitle={data.site.siteMetadata?.title || `Title`} />
           <Bio />
