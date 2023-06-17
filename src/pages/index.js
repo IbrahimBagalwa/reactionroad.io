@@ -8,8 +8,8 @@ const IndexPage = ({ data }) => {
   return (
     <Layout>
       {data.allMarkdownRemark.edges.map(({ node }) => (
-        <Link to={node.fields.slug}>
-          <div key={node.id} className="mt-14">
+        <Link to={node.fields.slug} key={node.id} className="mt-14">
+          <>
             <h1 className="dark:text-[#E5E9F0] font-bold text-[#011627] text-2xl">
               {node.frontmatter.title}
             </h1>
@@ -20,7 +20,7 @@ const IndexPage = ({ data }) => {
             <span className="dark:text-[#4D5BCE] text-[#cccccc] text-sm">
               {node.frontmatter.description}
             </span>
-          </div>
+          </>
         </Link>
       ))}
     </Layout>

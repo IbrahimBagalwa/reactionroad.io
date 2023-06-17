@@ -1,7 +1,7 @@
 ---
 title: "When to use OR and Nullish coalescing Operator"
 date: "27-02-2023"
-description: "| | and ?? operators in JavaScript offer fallback values for nullish or falsy variables/expressions"
+description: "|| and ?? operators in JavaScript offer fallback values for nullish or falsy variables/expressions"
 ---
 
 In javascript both logic operator OR

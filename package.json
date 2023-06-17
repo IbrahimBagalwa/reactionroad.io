@@ -3,7 +3,7 @@
   "private": true,
   "description": "A simple starter to get up and developing quickly with Gatsby",
   "version": "0.1.0",
-  "author": "Kyle Mathews <mathews.kyle@gmail.com>",
+  "author": "Ibrahim Bagalwa <ibrahim.bagalwa.dev@gmail.com>",
   "dependencies": {
     "gatsby": "^5.10.0",
     "gatsby-plugin-dark-mode": "^1.1.2",
@@ -38,7 +38,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/gatsbyjs/gatsby-starter-default"
+    "url": "https://github.com/IbrahimBagalwa/reactionroad.io"
   },
   "bugs": {
     "url": "https://github.com/gatsbyjs/gatsby/issues"
