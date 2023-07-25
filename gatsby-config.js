@@ -33,9 +33,21 @@ module.exports = {
       options: {
         plugins: [
           {
-            resolve: "gatsby-remark-prismjs",
+            resolve: `gatsby-remark-autolink-headers`,
+            options: {
+              offsetY: `100`,
+            },
+          },
+          {
+            resolve: `gatsby-remark-prismjs`,
             options: {
               inlineCodeMarker: "÷",
+            },
+          },
+          {
+            resolve: "gatsby-remark-external-links",
+            options: {
+              target: "_blank",
             },
           },
         ],
