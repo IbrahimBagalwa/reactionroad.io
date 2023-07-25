@@ -24,13 +24,13 @@ const Layout = ({ children }) => {
   `)
 
   return (
-    <div className="bg-white dark:bg-[#011627] mx-auto dark:text-[#bfc0c2] text-[#011627]">
-      <section className="flex items-center justify-center max-w-xl mx-auto w-full pt-10">
+    <div className="bg-white dark:bg-[#011627] mx-auto dark:text-[#bfc0c2] text-[#011627] min-h-screen">
+      <section className="flex items-center justify-center max-w-xl mx-auto w-full pt-10 relative">
         <div>
           <Header siteTitle={data.site.siteMetadata?.title || `Title`} />
           <Bio />
-          <main>{children}</main>
-          <footer className="flex dark:text-[#E5E9F0] font-bold bottom-0 absolute text-[#011627]">
+          <main className="mb-10">{children}</main>
+          <footer className="flex dark:text-[#E5E9F0] font-bold bottom-2 absolute text-[#011627]">
             <a href="https://github.com/IbrahimBagalwa" className="pr-2">
               Github
             </a>

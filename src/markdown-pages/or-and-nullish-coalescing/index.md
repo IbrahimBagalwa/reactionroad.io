@@ -28,7 +28,7 @@ This means that if the left value of the OR is a non-Boolean value, it will be c
 <br/><br/>
 For Example:
 
-```javascript
+```js
 let value = ""
 let orSolution = value || "default value"
 let nullishSolution = value ?? "default value"
@@ -41,7 +41,7 @@ In this example value is an empty string and empty string is a falsy value, || p
 
 Example:
 
-```javascript
+```js
 const add = value => {
   let nullishValue = value ?? 1
   return 70 + nullishValue
