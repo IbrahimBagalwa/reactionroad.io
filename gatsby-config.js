@@ -16,28 +16,23 @@ module.exports = {
     siteUrl: `https://gatsbystarterdefaultsource.gatsbyjs.io/`,
   },
   plugins: [
-    "gatsby-plugin-postcss",
+    `gatsby-plugin-postcss`,
     `gatsby-plugin-dark-mode`,
+    `gatsby-plugin-react-helmet`,
     `gatsby-plugin-image`,
-    `gatsby-transformer-remark`,
-    "gatsby-plugin-react-helmet",
     {
       resolve: `gatsby-source-filesystem`,
       options: {
-        path: `${__dirname}/src/pages`,
-        name: "pages",
+        name: `markdown-pages`,
+        path: `${__dirname}/src/markdown-pages`,
       },
     },
     {
       resolve: "gatsby-transformer-remark",
       options: {
+        gfm: true,
         plugins: [
-          {
-            resolve: `gatsby-remark-autolink-headers`,
-            options: {
-              offsetY: `100`,
-            },
-          },
+          `gatsby-remark-autolink-headers`,
           {
             resolve: `gatsby-remark-prismjs`,
             options: {
@@ -51,20 +46,6 @@ module.exports = {
             },
           },
         ],
-      },
-    },
-    {
-      resolve: `gatsby-source-filesystem`,
-      options: {
-        name: `images`,
-        path: `${__dirname}/src/images`,
-      },
-    },
-    {
-      resolve: `gatsby-source-filesystem`,
-      options: {
-        name: `markdown-pages`,
-        path: `${__dirname}/src/markdown-pages`,
       },
     },
     `gatsby-transformer-sharp`,
