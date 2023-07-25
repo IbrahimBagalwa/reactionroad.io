@@ -4,7 +4,7 @@ const Bio = () => {
   return (
     <div className="flex gap-5 mt-10 items-center">
       <img
-        src="/img/mba.jpg"
+        src="https://avatars.githubusercontent.com/u/67462827?s=400&u=9b29e3e4fcf8637f70af2e53e87c051c06cf533d&v=4"
         alt="Ibrahim"
         className=" w-20 h-20 rounded-full"
       />
