@@ -6,7 +6,6 @@
   "author": "Ibrahim Bagalwa <ibrahim.bagalwa.dev@gmail.com>",
   "dependencies": {
     "gatsby": "^5.10.0",
-    "gatsby-plugin-dark-mode": "^1.1.2",
     "gatsby-plugin-image": "^3.10.0",
     "gatsby-plugin-manifest": "^5.10.0",
     "gatsby-plugin-react-helmet": "^6.11.0",
@@ -17,8 +16,10 @@
     "gatsby-remark-images": "^7.11.0",
     "gatsby-remark-prismjs": "^7.11.0",
     "gatsby-remark-smartypants": "^6.11.0",
+    "gatsby-source-filesystem": "^5.14.0",
     "gatsby-transformer-remark": "^6.11.0",
     "gatsby-transformer-sharp": "^5.10.0",
+    "or": "^0.2.0",
     "prismjs": "^1.29.0",
     "react": "^18.2.0",
     "react-dom": "^18.2.0"
@@ -33,6 +34,9 @@
   "keywords": [
     "gatsby"
   ],
+  "engines": {
+    "node": ">=22.11.0"
+  },
   "license": "0BSD",
   "scripts": {
     "build": "gatsby build",
@@ -49,5 +53,6 @@
   },
   "bugs": {
     "url": "https://github.com/gatsbyjs/gatsby/issues"
-  }
+  },
+  "packageManager": "pnpm@10.7.1+sha512.2d92c86b7928dc8284f53494fb4201f983da65f0fb4f0d40baafa5cf628fa31dae3e5968f12466f17df7e97310e30f343a648baea1b9b350685dafafffdf5808"
 }
