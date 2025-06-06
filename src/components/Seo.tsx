@@ -1,14 +1,23 @@
 import { useStaticQuery, graphql } from "gatsby"
-import { ReactNode } from "react"
+import { type ReactNode } from "react"
 
 type SeoProps = {
   description?: string
   title: string
   children?: ReactNode
 }
-
+type SiteMetadata = {
+  title: string
+  description: string
+  author: string
+}
+type SiteStaticQueryData = {
+  site: {
+    siteMetadata: SiteMetadata
+  }
+}
 function Seo({ description, title, children }: SeoProps) {
-  const { site } = useStaticQuery(
+  const { site } = useStaticQuery<SiteStaticQueryData>(
     graphql`
       query {
         site {
