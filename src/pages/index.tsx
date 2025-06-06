@@ -1,10 +1,31 @@
-import * as React from "react"
-
-import Layout from "../components/layout"
-import Seo from "../components/seo"
+import Layout from "../components/Layout"
+import Seo from "../components/Seo"
 import { Link, graphql } from "gatsby"
 
-const IndexPage = ({ data }) => {
+import { PageProps } from "gatsby"
+
+interface MarkdownNode {
+  id: string
+  fields: {
+    slug: string
+  }
+  frontmatter: {
+    title: string
+    date: string
+    description: string
+  }
+  excerpt: string
+}
+
+interface IndexPageProps extends PageProps {
+  data: {
+    allMarkdownRemark: {
+      edges: { node: MarkdownNode }[]
+    }
+  }
+}
+
+const IndexPage: React.FC<IndexPageProps> = ({ data }) => {
   return (
     <Layout>
       {data.allMarkdownRemark.edges.map(({ node }) => (
@@ -27,12 +48,11 @@ const IndexPage = ({ data }) => {
   )
 }
 
-/**
- * Head export to define metadata for the page
- *
- * See: https://www.gatsbyjs.com/docs/reference/built-in-components/gatsby-head/
- */
-export const Head = () => <Seo title="Home" />
+export const Head = () => (
+  <Seo title="Home" description="Welcome to the homepage">
+    <div>Welcome to Reactionroad!</div>
+  </Seo>
+)
 
 export default IndexPage
 export const query = graphql`

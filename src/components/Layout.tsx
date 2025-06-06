@@ -1,33 +1,23 @@
-/**
- * Layout component that queries for data
- * with Gatsby's useStaticQuery component
- *
- * See: https://www.gatsbyjs.com/docs/how-to/querying-data/use-static-query/
- */
-
-import * as React from "react"
 import { useStaticQuery, graphql } from "gatsby"
-import PropTypes from "prop-types"
 import "../styles/global.css"
-import Header from "./header"
-import Bio from "./bio"
 
-const Layout = ({ children }) => {
-  const data = useStaticQuery(graphql`
-    query SiteTitleQuery {
-      site {
-        siteMetadata {
-          title
-        }
-      }
-    }
-  `)
+import Bio from "./Bio"
+import Header from "./Header"
+import { ReactNode } from "react"
+import { useStaticQuerySiteMetadata } from "../hooks/useStaticQuerySiteMetadata"
+
+type LayoutProps = {
+  children: ReactNode
+}
+
+const Layout = ({ children }: LayoutProps) => {
+  const data = useStaticQuerySiteMetadata()
 
   return (
     <div className="bg-white dark:bg-[#011627] mx-auto dark:text-[#bfc0c2] text-[#011627] min-h-screen">
       <section className="flex items-center justify-center max-w-xl mx-auto w-full pt-10 relative">
         <div>
-          <Header siteTitle={data.site.siteMetadata?.title || `Title`} />
+          <Header />
           <Bio />
           <main className="mb-10">{children}</main>
           <footer className="flex dark:text-[#E5E9F0] font-bold bottom-2 absolute text-[#011627]">
@@ -48,8 +38,5 @@ const Layout = ({ children }) => {
       </section>
     </div>
   )
-}
-Layout.propTypes = {
-  children: PropTypes.node.isRequired,
 }
 export default Layout

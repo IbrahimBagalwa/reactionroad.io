@@ -3,13 +3,18 @@
  *
  * See: https://www.gatsbyjs.com/docs/reference/config-files/gatsby-node/
  */
+import path from "path"
+import { GatsbyNode } from "gatsby"
 
 /**
  * @type {import('gatsby').GatsbyNode['createPages']}
  */
 const { createFilePath } = require(`gatsby-source-filesystem`)
 
-exports.createPages = async ({ graphql, actions }) => {
+export const createPages: GatsbyNode["createPages"] = async ({
+  graphql,
+  actions,
+}) => {
   const { createPage } = actions
   return graphql(`
     {
@@ -23,11 +28,11 @@ exports.createPages = async ({ graphql, actions }) => {
         }
       }
     }
-  `).then(result => {
-    result.data.allMarkdownRemark.edges.forEach(({ node }) => {
+  `).then((result: any) => {
+    result.data.allMarkdownRemark.edges.forEach(({ node }: { node: any }) => {
       createPage({
         path: node.fields.slug,
-        component: require.resolve("./src/templates/blog-post.js"),
+        component: path.resolve(__dirname, "./src/templates/blog-post.tsx"),
         context: {
           slug: node.fields.slug,
         },
@@ -35,10 +40,13 @@ exports.createPages = async ({ graphql, actions }) => {
     })
   })
 }
-exports.onCreateNode = ({ node, actions, getNode }) => {
+export const onCreateNode: GatsbyNode["onCreateNode"] = ({
+  node,
+  actions,
+  getNode,
+}) => {
   const { createNodeField } = actions
   if (node.internal.type === `MarkdownRemark`) {
-    // Slug inside of gatsby is the url or the link that the browser is able to access from our application in order to navigate to the page required.
     const slug = createFilePath({ node, getNode })
 
     createNodeField({
