@@ -3,7 +3,7 @@ import { Link } from "gatsby"
 import Layout from "../components/Layout"
 import Seo from "../components/Seo"
 
-const UsingSSR = ({ serverData }) => {
+const UsingSSR = ({ serverData }: any) => {
   return (
     <Layout>
       <h1>

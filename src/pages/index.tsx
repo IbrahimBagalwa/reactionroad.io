@@ -1,4 +1,3 @@
-import React from "react"
 import Layout from "../components/Layout"
 import Seo from "../components/Seo"
 import { Link, graphql } from "gatsby"
@@ -49,11 +48,6 @@ const IndexPage: React.FC<IndexPageProps> = ({ data }) => {
   )
 }
 
-/**
- * Head export to define metadata for the page
- *
- * See: https://www.gatsbyjs.com/docs/reference/built-in-components/gatsby-head/
- */
 export const Head = () => (
   <Seo title="Home" description="Welcome to the homepage">
     <div>Welcome to Reactionroad!</div>

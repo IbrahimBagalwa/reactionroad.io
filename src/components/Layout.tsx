@@ -1,13 +1,22 @@
-import React from "react"
 import { useStaticQuery, graphql } from "gatsby"
-import PropTypes from "prop-types"
 import "../styles/global.css"
 
 import Bio from "./Bio"
 import Header from "./Header"
+import { ReactNode } from "react"
 
-const Layout = ({ children }) => {
-  const data = useStaticQuery(graphql`
+type LayoutProps = {
+  children: ReactNode
+}
+type StaticData = {
+  site: {
+    siteMetadata: {
+      title: string
+    }
+  }
+}
+const Layout = ({ children }: LayoutProps) => {
+  const data = useStaticQuery<StaticData>(graphql`
     query SiteTitleQuery {
       site {
         siteMetadata {
@@ -16,7 +25,6 @@ const Layout = ({ children }) => {
       }
     }
   `)
-  console.log({ data })
   return (
     <div className="bg-white dark:bg-[#011627] mx-auto dark:text-[#bfc0c2] text-[#011627] min-h-screen">
       <section className="flex items-center justify-center max-w-xl mx-auto w-full pt-10 relative">
@@ -42,8 +50,5 @@ const Layout = ({ children }) => {
       </section>
     </div>
   )
-}
-Layout.propTypes = {
-  children: PropTypes.node.isRequired,
 }
 export default Layout
