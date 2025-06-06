@@ -1,4 +1,3 @@
-import React from "react"
 import ibrahimIMG from "../images/mba.jpg"
 
 const Bio = () => {

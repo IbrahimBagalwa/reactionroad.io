@@ -1,16 +1,10 @@
-/**
- * Layout component that queries for data
- * with Gatsby's useStaticQuery component
- *
- * See: https://www.gatsbyjs.com/docs/how-to/querying-data/use-static-query/
- */
-
-import * as React from "react"
+import React from "react"
 import { useStaticQuery, graphql } from "gatsby"
 import PropTypes from "prop-types"
 import "../styles/global.css"
-import Header from "./header"
-import Bio from "./bio"
+
+import Bio from "./Bio"
+import Header from "./Header"
 
 const Layout = ({ children }) => {
   const data = useStaticQuery(graphql`
@@ -22,7 +16,7 @@ const Layout = ({ children }) => {
       }
     }
   `)
-
+  console.log({ data })
   return (
     <div className="bg-white dark:bg-[#011627] mx-auto dark:text-[#bfc0c2] text-[#011627] min-h-screen">
       <section className="flex items-center justify-center max-w-xl mx-auto w-full pt-10 relative">
