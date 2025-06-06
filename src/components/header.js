@@ -1,6 +1,5 @@
 import * as React from "react"
 import { Link } from "gatsby"
-import ThemeToggle from "./theme"
 const Header = ({ siteTitle }) => (
   <header className="flex items-center justify-between">
     <Link
@@ -9,7 +8,6 @@ const Header = ({ siteTitle }) => (
     >
       {siteTitle}
     </Link>
-    <ThemeToggle />
   </header>
 )
 
