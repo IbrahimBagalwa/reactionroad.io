@@ -27,7 +27,7 @@ This means that if the left value of the OR is a non-Boolean value, it will be c
 
 <br/><br/>
 
-### For Example:
+## For Example:
 
 ```js
 let value = ""
