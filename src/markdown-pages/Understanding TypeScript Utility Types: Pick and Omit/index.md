@@ -1,6 +1,6 @@
 ---
 title: "Understanding TypeScript Utility Types: Pick and Omit"
-date: "24-04-2023"
+date: "2023-04-24"
 description: "TypeScript provides several utility types to facilitate common type transformations."
 ---
 

@@ -1,6 +1,6 @@
 ---
 title: "Become a Docker Superstar - part 1"
-date: 20-03-2025
+date: "2025-03-20"
 description: "Introduction to Docker Superstar part 1"
 ---
 

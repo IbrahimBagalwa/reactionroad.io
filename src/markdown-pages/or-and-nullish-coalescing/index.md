@@ -1,6 +1,6 @@
 ---
 title: "When to use OR and Nullish coalescing Operator"
-date: "27-02-2023"
+date: "2023-02-27"
 description: "|| and ?? operators in JavaScript offer fallback values for nullish or falsy variables/expressions"
 ---
 

@@ -1,6 +1,6 @@
 ---
 title: "Customizing Rust Error Messages with Diagnostic Attributes"
-date: "03-05-2024"
+date: "2024-05-03"
 description: "Rust now supports diagnostic attributes which helps you customize the error messages you get from the compiler."
 ---
 
