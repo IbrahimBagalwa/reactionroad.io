@@ -8,7 +8,7 @@ module.exports = {
   theme: {
     extend: {
       fontFamily: {
-        primary: "MontSerrat",
+        primary: ['"Univers"', "sans-serif"],
       },
     },
   },
