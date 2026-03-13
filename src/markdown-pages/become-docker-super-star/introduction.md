@@ -1,17 +1,17 @@
 ---
-title: "Become a docker super star"
-date: "20-03-2025"
-description: "Introduction to docker super star part 1"
+title: "Become a Docker Superstar - part 1"
+date: 20-03-2025
+description: "Introduction to Docker Superstar part 1"
 ---
 
-#### _Why Your Code Breaks on Other Machines and What You Can Do About It_
+### _Why Your Code Breaks on Other Machines and What You Can Do About It_
 
-Imagine this:  
+Imagine this:<br/><br/>
 You and your friends start a music band. You practice in your garage every weekend.
-Everything works well: your instruments, your sound system, your setup it's perfect.
+Everything works well: your instruments, your sound system, your setup it's perfect.<br/><br/>
 
-#### The First Gig… and the First Problem
-
+**The First Gig… and the First Problem**
+<br/><br/>
 One day, someone invites your band to play in another city. You are excited, you pack your things and go. But when arrive problems start:
 
 - Drummer forgot something important: it could be a pedal or drumsticks.
