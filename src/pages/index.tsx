@@ -28,10 +28,10 @@ interface IndexPageProps extends PageProps {
 const IndexPage: React.FC<IndexPageProps> = ({ data }) => {
   return (
     <Layout>
-      {data.allMarkdownRemark.edges.map(({ node }) => (
-        <Link to={node.fields.slug} key={node.id} className="mt-14">
-          <>
-            <h1 className="dark:text-[#E5E9F0] font-bold text-[#011627] text-2xl">
+      <div className="flex flex-col gap-14">
+        {data.allMarkdownRemark.edges.map(({ node }) => (
+          <Link to={node.fields.slug} key={node.id} className="block">
+            <h1 className="dark:text-[#E5E9F0] font-bold text-[#011627] text-2xl mb-1">
               {node.frontmatter.title}
             </h1>
             <p className="text-xs">
@@ -41,9 +41,9 @@ const IndexPage: React.FC<IndexPageProps> = ({ data }) => {
             <span className="dark:text-[#4D5BCE] text-[#cccccc] text-sm">
               {node.frontmatter.description}
             </span>
-          </>
-        </Link>
-      ))}
+          </Link>
+        ))}
+      </div>
     </Layout>
   )
 }
@@ -57,7 +57,7 @@ export const Head = () => (
 export default IndexPage
 export const query = graphql`
   query {
-    allMarkdownRemark(sort: { fields: [frontmatter___date], order: ASC }) {
+    allMarkdownRemark(sort: { fields: [frontmatter___date], order: DESC }) {
       totalCount
       edges {
         node {

@@ -1,6 +1,6 @@
 ---
 title: "JavaScript's Immutable Arrays Revolution."
-date: "04-07-2023"
+date: "2023-07-04"
 description: "Javascript introduced the powerful feature of changing elements, sort,reverse and splice arrays without changing the original, thus giving it immutability."
 ---
 

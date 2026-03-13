@@ -26,7 +26,10 @@ const BlogPost = ({ data }: BlogPostProps) => {
         <h1 className="text-2xl font-bold dark:text-[#E5E9F0] text-[#011627]">
           {title}
         </h1>
-        <div className="mt-10" dangerouslySetInnerHTML={{ __html: html }} />
+        <div
+          className="mt-10 markdown-content"
+          dangerouslySetInnerHTML={{ __html: html }}
+        />
       </div>
       <Header />
     </Layout>

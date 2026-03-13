@@ -19,17 +19,56 @@
 @tailwind utilities;
 
 @font-face {
-  font-family: "MontSerrat";
-  src: local("MontSerrat"), url("/font/montserrat.woff2") format("woff2"),
-    url("/font/montserrat.woff2") format("woff");
+  font-family: "Univers";
+  src: url("/fonts/UniversLTW02-45Light.dd06a651.woff2") format("woff2");
   font-style: normal;
-  font-weight: normal;
+  font-weight: 300;
   font-display: swap;
 }
 
-/* html {
-  @apply font-primary;
-} */
+@font-face {
+  font-family: "Univers";
+  src: url("/fonts/UniversLTW02-45LightOblique.aa986c0e.woff2") format("woff2");
+  font-style: italic;
+  font-weight: 300;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Univers";
+  src: url("/fonts/UniversLTW02-55Roman.03648984.woff2") format("woff2");
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Univers";
+  src: url("/fonts/UniversLTW02-55Oblique.a2501371.woff2") format("woff2");
+  font-style: italic;
+  font-weight: 400;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Univers";
+  src: url("/fonts/UniversLTW02-65Bold.e99ea69c.woff2") format("woff2");
+  font-style: normal;
+  font-weight: 700;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Univers";
+  src: url("/fonts/UniversLTW02-65BoldOblique.09f05cf3.woff2") format("woff2");
+  font-style: italic;
+  font-weight: 700;
+  font-display: swap;
+}
+
+html {
+  font-family: "Univers", sans-serif;
+}
 .switch {
   position: relative;
   display: inline-block;
@@ -88,4 +127,59 @@ input:checked + .slider:before {
 
 .slider.round:before {
   border-radius: 50%;
+}
+
+/* Markdown content - restore styles stripped by Tailwind Preflight */
+.markdown-content p {
+  margin-bottom: 1rem;
+  line-height: 1.75;
+}
+
+.markdown-content ul {
+  list-style-type: disc;
+  padding-left: 1.5rem;
+  margin-bottom: 1rem;
+}
+
+.markdown-content ol {
+  list-style-type: decimal;
+  padding-left: 1.5rem;
+  margin-bottom: 1rem;
+}
+
+.markdown-content li {
+  margin-bottom: 0.25rem;
+}
+
+.markdown-content blockquote {
+  border-left: 4px solid #4d5bce;
+  padding-left: 1rem;
+  margin: 1rem 0;
+  font-style: italic;
+  color: #6b7280;
+}
+
+.markdown-content h4,
+.markdown-content h5,
+.markdown-content h6 {
+  font-weight: bold;
+  margin-top: 1.5rem;
+  margin-bottom: 0.5rem;
+}
+
+.markdown-content h4 {
+  font-size: 1.125rem;
+}
+
+.markdown-content h5 {
+  font-size: 1rem;
+}
+
+.markdown-content hr {
+  margin: 1.5rem 0;
+  border-color: #e5e7eb;
+}
+
+.markdown-content strong {
+  font-weight: 700;
 }
