@@ -9,7 +9,6 @@ Javascript introduced the powerful feature of changing elements, sort,reverse an
 Four new methods allow you to change arrays without having to create a copy first.
 
 The new methods are:
-<br/><br/>
 
 # 1. with()
 

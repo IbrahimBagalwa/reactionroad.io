@@ -5,13 +5,12 @@ description: "TypeScript provides several utility types to facilitate common typ
 ---
 
 TypeScript provides several utility types to facilitate common type transformations.
-<br/><br/>
+
 These good features make it easy to manipulate types, either by selecting specific properties or removing unwanted ones from objects.
-<br/><br/>
+
 In this article, we'll demystify TypeScript's utility types, focusing on **Pick** and **Omit.** Whether you're new to TypeScript or a pro, understanding these concepts will improve your coding skills.
-<br/><br/>
+
 These utility types make it easy to work with just the data you need and simplify object manipulation in TypeScript.
-<br/><br/>
 
 # Pick
 
@@ -41,7 +40,6 @@ const user: UserProfil = {
 **`UserProfil`** is a new type created using **`Pick`**, which includes only the `username` and `email` properties from the original **`User`** interface.
 
 It allows you to work with a more concise representation of a user's profile without including unnecessary details.
-<br/><br/>
 
 # Omit
 

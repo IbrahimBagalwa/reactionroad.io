@@ -6,12 +6,12 @@ description: "Introduction to Docker Superstar part 1"
 
 ### _Why Your Code Breaks on Other Machines and What You Can Do About It_
 
-Imagine this:<br/><br/>
+Imagine this:
 You and your friends start a music band. You practice in your garage every weekend.
-Everything works well: your instruments, your sound system, your setup it's perfect.<br/><br/>
+Everything works well: your instruments, your sound system, your setup it's perfect.
 
 **The First Gig… and the First Problem**
-<br/><br/>
+
 One day, someone invites your band to play in another city. You are excited, you pack your things and go. But when arrive problems start:
 
 - Drummer forgot something important: it could be a pedal or drumsticks.

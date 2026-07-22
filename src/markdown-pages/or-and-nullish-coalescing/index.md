@@ -6,26 +6,22 @@ description: "|| and ?? operators in JavaScript offer fallback values for nullis
 
 In javascript both logic operator **OR**
 **||** and **Nullish coalescing** **??** are used to provide fallback values when the variable or expression is nullish or falsy.
-<br/><br/>
+
 However they have few differences which we will explore bellow:
-<br/><br/>
 
 # OR Operator `||`
 
 The OR operator uses the right value if left is falsy.
 This means that if the left value of the logical OR operator is truthy but not nullish, the right value will not be evaluated.
 A falsy value is something which evaluates to FALSE, for instance when checking a variable. You can check all the falsy values **[here](https://developer.mozilla.org/en-US/docs/Glossary/Falsy)**.
-<br/><br/>
 
 # Nullish coalescing Operator `??`
 
 This operator ??uses the right value if left is only `null` or `undefined`. nullish coalescing operator provides the fallback value only on `null` and `undefined`.
-<br/><br/>
-The OR operator performs type conversion of the left value to a bolean value instead of nullish coalescing operator check if the value is a nullish (`null` or `undefined`).
-<br/><br/>
-This means that if the left value of the OR is a non-Boolean value, it will be converted to a Boolean value before the operator is applied.
 
-<br/><br/>
+The OR operator performs type conversion of the left value to a bolean value instead of nullish coalescing operator check if the value is a nullish (`null` or `undefined`).
+
+This means that if the left value of the OR is a non-Boolean value, it will be converted to a Boolean value before the operator is applied.
 
 ## For Example:
 
