@@ -18,23 +18,30 @@ export const createPages: GatsbyNode["createPages"] = async ({
   const { createPage } = actions
   return graphql(`
     {
-      allMarkdownRemark {
+      allMdx {
         edges {
           node {
+            id
             fields {
               slug
+            }
+            internal {
+              contentFilePath
             }
           }
         }
       }
     }
   `).then((result: any) => {
-    result.data.allMarkdownRemark.edges.forEach(({ node }: { node: any }) => {
+    result.data.allMdx.edges.forEach(({ node }: { node: any }) => {
       createPage({
         path: node.fields.slug,
-        component: path.resolve(__dirname, "./src/templates/blog-post.tsx"),
+        component: `${path.resolve(
+          __dirname,
+          "./src/templates/blog-post.tsx"
+        )}?__contentFilePath=${node.internal.contentFilePath}`,
         context: {
-          slug: node.fields.slug,
+          id: node.id,
         },
       })
     })
@@ -46,7 +53,7 @@ export const onCreateNode: GatsbyNode["onCreateNode"] = ({
   getNode,
 }) => {
   const { createNodeField } = actions
-  if (node.internal.type === `MarkdownRemark`) {
+  if (node.internal.type === `Mdx`) {
     const slug = createFilePath({ node, getNode })
 
     createNodeField({

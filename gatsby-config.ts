@@ -7,6 +7,14 @@
 /**
  * @type {import('gatsby').GatsbyConfig}
  */
+const remarkGfmModule = require("remark-gfm")
+const rehypePrettyCodeModule = require("rehype-pretty-code")
+const remarkGfm = remarkGfmModule.default || remarkGfmModule
+const rehypePrettyCode =
+  rehypePrettyCodeModule.default || rehypePrettyCodeModule
+const overnightTheme = require("overnight/themes/Overnight-Slumber.json")
+overnightTheme.colors["editor.background"] = "var(--code-bg)"
+
 module.exports = {
   siteMetadata: {
     title: `Reactionroad`,
@@ -27,17 +35,33 @@ module.exports = {
       },
     },
     {
-      resolve: "gatsby-transformer-remark",
+      resolve: `gatsby-plugin-mdx`,
       options: {
-        gfm: true,
-        plugins: [
+        extensions: [`.md`, `.mdx`],
+        mdxOptions: {
+          remarkPlugins: [remarkGfm],
+          rehypePlugins: [
+            [
+              rehypePrettyCode,
+              {
+                theme: overnightTheme,
+                keepBackground: true,
+                defaultLang: `text`,
+                bypassInlineCode: true,
+                onVisitHighlightedLine(node) {
+                  node.properties.className ||= []
+                  node.properties.className.push("line--highlighted")
+                },
+                onVisitHighlightedChars(node) {
+                  node.properties.className ||= []
+                  node.properties.className.push("word--highlighted")
+                },
+              },
+            ],
+          ],
+        },
+        gatsbyRemarkPlugins: [
           `gatsby-remark-autolink-headers`,
-          {
-            resolve: `gatsby-remark-prismjs`,
-            options: {
-              inlineCodeMarker: "÷",
-            },
-          },
           {
             resolve: "gatsby-remark-external-links",
             options: {

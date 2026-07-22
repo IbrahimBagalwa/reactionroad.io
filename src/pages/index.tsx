@@ -19,7 +19,7 @@ interface MarkdownNode {
 
 interface IndexPageProps extends PageProps {
   data: {
-    allMarkdownRemark: {
+    allMdx: {
       edges: { node: MarkdownNode }[]
     }
   }
@@ -29,9 +29,9 @@ const IndexPage: React.FC<IndexPageProps> = ({ data }) => {
   return (
     <Layout>
       <div className="flex flex-col gap-14">
-        {data.allMarkdownRemark.edges.map(({ node }) => (
+        {data.allMdx.edges.map(({ node }) => (
           <Link to={node.fields.slug} key={node.id} className="block">
-            <h1 className="dark:text-[#E5E9F0] font-bold text-[#011627] text-2xl mb-1">
+            <h1 className="home-post-title dark:text-[#E5E9F0] font-bold text-[#011627] text-2xl mb-1">
               {node.frontmatter.title}
             </h1>
             <p className="text-xs">
@@ -57,7 +57,7 @@ export const Head = () => (
 export default IndexPage
 export const query = graphql`
   query {
-    allMarkdownRemark(sort: { fields: [frontmatter___date], order: DESC }) {
+    allMdx(sort: { frontmatter: { date: DESC } }) {
       totalCount
       edges {
         node {
