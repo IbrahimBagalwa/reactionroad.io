@@ -35,13 +35,13 @@ const Layout = ({ children }: LayoutProps) => {
   }
 
   return (
-    <div className="bg-white dark:bg-[#011627] mx-auto dark:text-[#bfc0c2] text-[#011627] min-h-screen">
+    <div className="bg-[#f6f8fc] dark:bg-[#121212] mx-auto dark:text-[#cfcfcf] text-[#0b1220] min-h-screen">
       <section className="flex items-center justify-center max-w-xl mx-auto w-full pt-10 relative">
         <div>
           <Header isDark={isDark} onToggleTheme={handleToggleTheme} />
           <Bio />
           <main className="mb-10">{children}</main>
-          <footer className="flex dark:text-[#E5E9F0] font-bold bottom-2 absolute text-[#011627]">
+          <footer className="flex dark:text-[#aaaaaa] font-bold bottom-2 absolute text-[#0b1220]">
             <a href="https://github.com/IbrahimBagalwa" className="pr-2">
               Github
             </a>
