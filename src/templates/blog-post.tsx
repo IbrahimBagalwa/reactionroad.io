@@ -1,7 +1,6 @@
-import { graphql } from "gatsby"
+import { graphql, Link } from "gatsby"
 import Layout from "../components/Layout"
 import "../styles/global.css"
-import Header from "../components/Header"
 
 type BlogPostProps = {
   data: {
@@ -30,8 +29,12 @@ const BlogPost = ({ data }: BlogPostProps) => {
           className="mt-10 markdown-content"
           dangerouslySetInnerHTML={{ __html: html }}
         />
+        <div className="mt-10 pt-6 border-t border-[#cccccc] dark:border-[#1d3b53]">
+          <Link to="/" className="font-bold text-[#011627] dark:text-[#E5E9F0]">
+            Back to home
+          </Link>
+        </div>
       </div>
-      <Header />
     </Layout>
   )
 }
