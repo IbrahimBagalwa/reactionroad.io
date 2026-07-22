@@ -1,9 +1,14 @@
 import { Link } from "gatsby"
-import { use } from "react"
 import { useStaticQuerySiteMetadata } from "../hooks/useStaticQuerySiteMetadata"
 
-const Header = () => {
+type HeaderProps = {
+  isDark: boolean
+  onToggleTheme: () => void
+}
+
+const Header = ({ isDark, onToggleTheme }: HeaderProps) => {
   const data = useStaticQuerySiteMetadata()
+
   return (
     <header className="flex items-center justify-between">
       <Link
@@ -12,6 +17,15 @@ const Header = () => {
       >
         {data.site.siteMetadata.title || "ReactionRoad"}
       </Link>
+      <label className="switch" aria-label="Toggle dark mode">
+        <input
+          type="checkbox"
+          checked={isDark}
+          onChange={onToggleTheme}
+          aria-label="Dark mode toggle"
+        />
+        <span className="slider round" />
+      </label>
     </header>
   )
 }
