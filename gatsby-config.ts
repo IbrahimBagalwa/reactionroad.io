@@ -15,6 +15,12 @@ const rehypePrettyCode =
 const overnightTheme = require("overnight/themes/Overnight-Slumber.json")
 overnightTheme.colors["editor.background"] = "var(--code-bg)"
 
+type HighlightVisitNode = {
+  properties?: {
+    className?: string[]
+  }
+}
+
 module.exports = {
   siteMetadata: {
     title: `Reactionroad`,
@@ -48,11 +54,13 @@ module.exports = {
                 keepBackground: true,
                 defaultLang: `text`,
                 bypassInlineCode: true,
-                onVisitHighlightedLine(node) {
+                onVisitHighlightedLine(node: HighlightVisitNode) {
+                  node.properties ||= {}
                   node.properties.className ||= []
                   node.properties.className.push("line--highlighted")
                 },
-                onVisitHighlightedChars(node) {
+                onVisitHighlightedChars(node: HighlightVisitNode) {
+                  node.properties ||= {}
                   node.properties.className ||= []
                   node.properties.className.push("word--highlighted")
                 },

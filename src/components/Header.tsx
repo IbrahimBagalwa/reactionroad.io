@@ -11,10 +11,7 @@ const Header = ({ isDark, onToggleTheme }: HeaderProps) => {
 
   return (
     <header className="flex items-center justify-between">
-      <Link
-        className="dark:text-[#f1f1f1] text-[#0b1220] font-bold text-4xl"
-        to="/"
-      >
+      <Link className="dark:text-white text-[#222] font-bold text-4xl" to="/">
         {data.site.siteMetadata.title || "ReactionRoad"}
       </Link>
       <label className="switch" aria-label="Toggle dark mode">

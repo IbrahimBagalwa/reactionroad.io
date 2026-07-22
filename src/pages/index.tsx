@@ -25,22 +25,42 @@ interface IndexPageProps extends PageProps {
   }
 }
 
+const formatPostDate = (dateString: string) => {
+  const date = new Date(dateString)
+
+  if (Number.isNaN(date.getTime())) {
+    return dateString
+  }
+
+  return date.toLocaleDateString("en", {
+    day: "numeric",
+    month: "long",
+    year: "numeric",
+  })
+}
+
 const IndexPage: React.FC<IndexPageProps> = ({ data }) => {
   return (
     <Layout>
-      <div className="flex flex-col gap-14">
+      <div className="relative -top-[10px] flex flex-col gap-8">
         {data.allMdx.edges.map(({ node }) => (
-          <Link to={node.fields.slug} key={node.id} className="block">
-            <h1 className="home-post-title dark:text-[#f1f1f1] font-bold text-[#0b1220] text-2xl mb-1">
-              {node.frontmatter.title}
-            </h1>
-            <p className="text-xs dark:text-[#979797]">
-              {node.frontmatter.date}.{" "}
-              {Math.ceil(node.fields.slug.length / 200)} min read
-            </p>
-            <span className="dark:text-[#b0b0b0] text-[#5b6475] text-sm">
-              {node.frontmatter.description}
-            </span>
+          <Link
+            to={node.fields.slug}
+            key={node.id}
+            className="block py-4 hover:scale-[1.005] will-change-transform transition-transform duration-150"
+          >
+            <article>
+              <h1 className="home-post-title dark:text-white font-bold text-[#222] text-2xl mb-1">
+                {node.frontmatter.title}
+              </h1>
+              <p className="text-[13px] text-gray-700 dark:text-gray-300">
+                {formatPostDate(node.frontmatter.date)}.{" "}
+                {Math.ceil(node.fields.slug.length / 200)} min read
+              </p>
+              <p className="mt-1 text-sm text-gray-700 dark:text-gray-300">
+                {node.frontmatter.description}
+              </p>
+            </article>
           </Link>
         ))}
       </div>
