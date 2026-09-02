@@ -1,7 +1,10 @@
 ---
-title: "Become a Docker Superstar - part 1"
+title: "Introduction to Docker Superstar"
 date: "2025-03-20"
-description: "Introduction to Docker Superstar part 1"
+description: "Introduction to Docker Superstar"
+series: "Become a Docker Superstar"
+seriesOrder: 1
+seriesDescription: "Learn Docker from scratch — what containers are, how they differ from VMs, how images and the Docker daemon work, and how to install Docker and run your first container."
 ---
 
 ### _Why Your Code Breaks on Other Machines and What You Can Do About It_

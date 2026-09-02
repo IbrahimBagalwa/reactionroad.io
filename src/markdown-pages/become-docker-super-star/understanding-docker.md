@@ -2,6 +2,8 @@
 title: "Understanding Docker - part 2"
 date: "2025-03-22"
 description: "Understanding Docker"
+series: "Become a Docker Superstar"
+seriesOrder: 2
 ---
 
 You remember the story, right?
