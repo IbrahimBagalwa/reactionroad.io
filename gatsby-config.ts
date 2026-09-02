@@ -69,6 +69,19 @@ module.exports = {
           ],
         },
         gatsbyRemarkPlugins: [
+          {
+            resolve: require.resolve(
+              `./plugins/gatsby-remark-inline-svg`
+            ),
+          },
+          {
+            resolve: `gatsby-remark-images`,
+            options: {
+              maxWidth: 800,
+              linkImagesToOriginal: false,
+            },
+          },
+          `gatsby-remark-copy-linked-files`,
           `gatsby-remark-autolink-headers`,
           {
             resolve: "gatsby-remark-external-links",

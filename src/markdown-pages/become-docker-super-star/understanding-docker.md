@@ -57,8 +57,6 @@ This could be:
 
 Something has to provide the CPU, memory, storage, and networking that our applications will eventually use.
 
-![image](./images/physical_infrastructure.png "Physical infrastructure")
-
 ### 2. Host Operating System
 
 On top of that infrastructure runs an operating system. On your laptop, this might be macOS, Windows, or a Linux distribution. When we're talking about VMs, this is usually called the **host operating system**.
@@ -99,7 +97,7 @@ It gets worse. Each guest OS also needs its own CPU and memory, plus its own cop
 
 The more applications we run, the more of these environments we may need.
 
-![image](./images/VM_architecture.svg)
+![image](./vm_architecture.svg)
 
 This is a story of running a VMs on the server now let compare that to Docker.
 
@@ -114,7 +112,7 @@ Docker containers are practically magic bullets. We still need some kind of **In
 
 The last piece is our applications. Each one ends up living inside a Docker image and is managed independently by the Docker daemon. Each application and its libraries typically get packed into the same image, and each stays isolated from the others.
 
-![image](docker_architecture.svg)
+![image](./docker_architecture.svg)
 
 Notice what's missing?
 
@@ -174,7 +172,7 @@ And this distinction is extremely important:
 
 Think about it like this:
 
-![image](docker-image.svg)
+![image](./docker-image.svg)
 
 One image can be used to create multiple containers.
 
@@ -290,7 +288,7 @@ It can:
 
 You can think of the daemon as the part of Docker that actually does the work.
 
-![image](docker_arch.svg)
+![image](./docker_arch.svg)
 
 But if the daemon is doing the work, how do **we** tell it what to do?
 
@@ -333,7 +331,7 @@ You can have other tools or applications communicate with the Docker daemon thro
 
 So you can think of Docker as a client-server application:
 
-![image](docker-client-server-architecture.webp)
+![image](./docker-client-server-architecture.webp)
 
 This also means that the client and daemon don't necessarily have to live on the same machine.
 
