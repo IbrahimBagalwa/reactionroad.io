@@ -1,5 +1,5 @@
 ---
-title: "Understanding Docker - part 2"
+title: "Understanding Docker"
 date: "2025-03-22"
 description: "Understanding Docker"
 series: "Become a Docker Superstar"

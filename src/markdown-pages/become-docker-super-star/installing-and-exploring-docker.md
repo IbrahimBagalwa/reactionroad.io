@@ -1,5 +1,5 @@
 ---
-title: "Installing and Exploring Docker - part 3"
+title: "Installing and Exploring Docker"
 date: "2025-03-23"
 description: "Installing and Exploring Docker"
 series: "Become a Docker Superstar"
