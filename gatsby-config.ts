@@ -7,8 +7,11 @@
 /**
  * @type {import('gatsby').GatsbyConfig}
  */
+const fs = require("fs")
+const path = require("path")
 const remarkGfmModule = require("remark-gfm")
 const rehypePrettyCodeModule = require("rehype-pretty-code")
+const visit = require("unist-util-visit")
 const remarkGfm = remarkGfmModule.default || remarkGfmModule
 const rehypePrettyCode =
   rehypePrettyCodeModule.default || rehypePrettyCodeModule
@@ -18,6 +21,41 @@ overnightTheme.colors["editor.background"] = "var(--code-bg)"
 type HighlightVisitNode = {
   properties?: {
     className?: string[]
+  }
+}
+
+type ImageNode = {
+  url: string
+}
+
+type ParentNode = {
+  children: unknown[]
+}
+
+function remarkInlineSvg() {
+  return (tree: unknown, vfile: { path?: string }) => {
+    const fileDir = path.dirname(vfile.path || "")
+    const replacements: { index: number; parent: ParentNode; absPath: string }[] = []
+
+    visit(tree, "image", (node: ImageNode, index: number, parent: ParentNode) => {
+      if (!node.url || !node.url.endsWith(".svg")) return
+      const absPath = path.resolve(fileDir, node.url)
+      if (!fs.existsSync(absPath)) return
+      replacements.push({ index, parent, absPath })
+    })
+
+    for (const { index, parent, absPath } of replacements) {
+      let svg: string = fs.readFileSync(absPath, "utf8")
+      svg = svg
+        .replace(/<\?xml[^>]*\?>/g, "")
+        .replace(/<metadata>[\s\S]*?<\/metadata>/g, "")
+        .trim()
+
+      parent.children[index] = {
+        type: "html",
+        value: `<span class="svg-inline">${svg}</span>`,
+      }
+    }
   }
 }
 
@@ -45,7 +83,7 @@ module.exports = {
       options: {
         extensions: [`.md`, `.mdx`],
         mdxOptions: {
-          remarkPlugins: [remarkGfm],
+          remarkPlugins: [remarkGfm, remarkInlineSvg],
           rehypePlugins: [
             [
               rehypePrettyCode,
@@ -70,11 +108,6 @@ module.exports = {
         },
         gatsbyRemarkPlugins: [
           {
-            resolve: require.resolve(
-              `./plugins/gatsby-remark-inline-svg`
-            ),
-          },
-          {
             resolve: `gatsby-remark-images`,
             options: {
               maxWidth: 800,
@@ -94,6 +127,7 @@ module.exports = {
     },
 
     `gatsby-plugin-sharp`,
+    `gatsby-transformer-sharp`,
     {
       resolve: `gatsby-plugin-manifest`,
       options: {
