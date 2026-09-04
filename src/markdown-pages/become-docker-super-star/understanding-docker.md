@@ -154,15 +154,7 @@ We package our application together with the things it needs into a **Docker ima
 
 For example:
 
-```text
-Docker Image
-│
-├── Application
-├── Application dependencies
-├── Libraries
-├── Runtime
-└── Configuration
-```
+![image](./docker-component.svg)
 
 The image becomes our application's packaged environment.
 
@@ -333,7 +325,7 @@ You can have other tools or applications communicate with the Docker daemon thro
 
 So you can think of Docker as a client-server application:
 
-![image](./docker-client-server-architecture.webp)
+![image](./docker-client-server-architecture.svg)
 
 This also means that the client and daemon don't necessarily have to live on the same machine.
 

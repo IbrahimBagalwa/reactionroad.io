@@ -263,6 +263,18 @@ input:checked + .slider:before {
   color: var(--inlineCode-text);
 }
 
+.markdown-content .svg-inline {
+  display: block;
+  max-width: 100%;
+  overflow-x: auto;
+  margin: 1.25rem 0;
+}
+
+.markdown-content .svg-inline svg {
+  max-width: 100%;
+  height: auto;
+}
+
 .markdown-content [data-rehype-pretty-code-figure] {
   margin: 1.25rem 0;
 }

@@ -49,6 +49,8 @@ function remarkInlineSvg() {
       svg = svg
         .replace(/<\?xml[^>]*\?>/g, "")
         .replace(/<metadata>[\s\S]*?<\/metadata>/g, "")
+        .replace(/(<svg[^>]*)\s+width="[^"]*"/, "$1")
+        .replace(/(<svg[^>]*)\s+height="[^"]*"/, "$1")
         .trim()
 
       parent.children[index] = {
